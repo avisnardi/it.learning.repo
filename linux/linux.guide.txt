@@ -1,0 +1,16 @@
+ls
+	Listar arquivos e pastas.
+	
+ls -lh
+
+	Listar arquivos e paster com tamanho.
+	
+chmod -R 760 <arquivo.ou.pasta>
+
+	Liberar permissão no arquivos.
+		7 - Permissao total para o owner.
+		6 - Permissao leitura para o grupo owner.
+		0 - Sem acesso para outros usuários.
+
+	-R Recursivo para subpastas e arquivos 
+	
