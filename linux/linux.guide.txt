@@ -3,8 +3,12 @@ ls
 	
 ls -lh
 
-	Listar arquivos e paster com tamanho.
-	
+	Listar arquivos e pastas com tamanho.
+
+cat <filename>
+
+	Listar conteudo de arquivos
+
 chmod -R 760 <arquivo.ou.pasta>
 
 	Liberar permissão no arquivos.

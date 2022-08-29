@@ -1,0 +1,9 @@
+Dockerfile
+	Principais comandos para criar a receita da imagem
+		https://blog.rocketseat.com.br/dockerfile-principais-comandos-para-criar-a-receita-da-imagem/
+
+	Desvendando o DockerFile
+		https://www.alura.com.br/artigos/desvendando-o-dockerfile
+
+Docker Compose:
+	https://www.alura.com.br/artigos/compondo-uma-aplicacao-com-o-docker-compose

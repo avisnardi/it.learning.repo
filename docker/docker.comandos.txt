@@ -1,0 +1,51 @@
+docker ps
+	Listar containers ativos.
+	-a 
+		Listar todos containers
+	
+docker container ls
+	Listar containers
+	
+docker image ls
+	Listar imagens
+	
+docker start|stop|pause|unpause <containerId>
+	Iniicar|parar|pausar|despausar container
+	
+docker logs <ContainerID>
+	Listar log 
+	
+docker tag arch-linux/glibc-amd64:latest archlinux
+	Renomear imagens
+	
+docker rmi arch-linux/glibc-amd64:latest
+	Remove imagem
+	
+docker container exec -it <container>
+	Como "entrar" na linha de comando do container.
+	
+docker image build -t <nomeimagem>:<tag>
+	Cria imagem a partir do Dockerfile
+
+	Exemplo: docker image build -t fms-img/ubuntu-java8:1.0 .
+	
+########################
+	
+
+Iniciar o Oracle limitado em 4g:
+	
+	docker run -ti --memory 4g -d -p 1522:1521  -e ORACLE_PASSWORD=admin -v oracle-volume:/home/avisnardi/DadosOracle/ora-db gvenzl/oracle-xe
+
+
+Iniciar o Portainer
+
+	docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latestner
+	
+	link: https://localhost:9443
+	user: avisnardi
+	pass: avisnardi123
+	
+Iniciar container FMS*
+
+	docker run -ti --name fms-container.ubuntu-java8 fms-img/ubuntu-java8:1.0
+

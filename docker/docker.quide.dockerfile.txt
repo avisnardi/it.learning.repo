@@ -1,0 +1,26 @@
+Etapas para criar imagem:
+
+	1. Definir imagem base;
+	2. Definir informações para a imagem;
+	3. Executar comandos para instalar e inciar os novos programas na imagem (Exemplo nginx);
+	4. Expor as portas que o servidor vai atender (no container);
+	5. Definir o ponto de entrada da aplicação;
+	6. Definir a execução de um comando oara iniciar os novos programas (Exemplo servidor nginx);
+
+
+FROM debian:11
+LABEL key="1.0" description="FMS-IMG:Ubuntu/Java8"
+RUN apt-get update && apt-get install -y nginx && apt-get clean
+EXPOSE 80
+ENTRYPOINT ["/usr/sbin/nginx"]
+CMD ["-g"; "deamon off"]
+
+
+
+### Linux + Java ########################
+
+FROM ubuntu
+LABEL key="1.0" description="FMS-IMG:Ubuntu/Java8"
+RUN apt-get update
+RUN apt-get install openjdk-8-jdk -y
+RUN touch arquivo_teste.txt

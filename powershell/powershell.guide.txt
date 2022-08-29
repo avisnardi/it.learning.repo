@@ -1,0 +1,3 @@
+wsl --shutdown
+	Para processo e liberar memoria da máquina virtural do WSL.
+	
