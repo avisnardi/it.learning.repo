@@ -17,6 +17,9 @@ docker logs <ContainerID>
 	
 docker tag arch-linux/glibc-amd64:latest archlinux
 	Renomear imagens
+
+docker rm $(docker ps -qa) <-f>
+	Remove todos os containers
 	
 docker rmi arch-linux/glibc-amd64:latest
 	Remove imagem
@@ -32,10 +35,11 @@ docker image build -t <nomeimagem>:<tag>
 ########################
 	
 
-Iniciar o Oracle limitado em 4g:
+Iniciar o Oracle limitado em 2g:
 	
-	docker run -ti --memory 4g -d -p 1522:1521  -e ORACLE_PASSWORD=admin -v oracle-volume:/home/avisnardi/DadosOracle/ora-db gvenzl/oracle-xe
+	docker run -ti --memory 2g -p 1521:1521 -v /home/avisnardi/DadosOracle/ora-db:/opt/oracle/oradata gvenzl/oracle-xe
 
+	docker run -ti --memory 2g -d -p 1521:1521  -e ORACLE_PASSWORD=admin -v oracle-volume:/home/avisnardi/DadosOracle/ora-db gvenzl/oracle-xe
 
 Iniciar o Portainer
 

@@ -1,3 +1,55 @@
 wsl --shutdown
 	Para processo e liberar memoria da máquina virtural do WSL.
 	
+#########################################################################################################################
+#########################################################################################################################
+
+Listar arquivos recetentes:	
+	
+$MyPath = "\\sp01w2k12mtah01\SecureClientCert\Receber"
+
+$MyPath = "\\vsao001079\SecureClient\receber"
+
+$recentFiles  = @(Get-ChildItem -Filter BVBG.028.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.066.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.067.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.068.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.069.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.090.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.017.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.062.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.063.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.091.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+$recentFiles += @(Get-ChildItem -Filter BVBG.086.*.*  -Path $MyPath | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1)
+
+$recentFiles | select -Property Name, LastWriteTime | Sort-Object -Property LastWriteTime
+
+
+#########################################################################################################################
+#########################################################################################################################
+
+Listar apagar pastas:	
+
+foreach($folder in 
+@(Get-ChildItem -Filter 2022* -Path "C:\3FMeS\SCL\log\historicMessageReceiver" | 
+Where-Object {$_.Attributes -eq "Directory"} | 
+Where-Object {$_.Name -lt "202208"} | 
+Sort-Object -Property Name | 
+Select FullName)
+
+)
+{
+    Write-output $folder.FullName
+	Remove-Item $folder.FullName -Recurse -Force
+	Write-output (get-date).ToString("yyyy-MM-dd HH:mm:ss")
+	Write-output "############################################################################"
+}
+
+#########################################################################################################################
+#########################################################################################################################
+
+Obter tamanho da pastas
+
+$Size=0
+Get-ChildItem C:\3FMeS\SCL\log\historicMessageReceiver -Recurse -Attributes "Hidden,!Directory" | %{$Size+=$_.length} 
+$Size/1GB

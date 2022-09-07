@@ -9,6 +9,12 @@ cat <filename>
 
 	Listar conteudo de arquivos
 
+rm -r <pasta>
+	
+	Apagar pasta e subpastas.
+
+	
+
 chmod -R 760 <arquivo.ou.pasta>
 
 	Liberar permissão no arquivos.
@@ -18,3 +24,4 @@ chmod -R 760 <arquivo.ou.pasta>
 
 	-R Recursivo para subpastas e arquivos 
 	
+chmod -R 777 ora-db
