@@ -1,3 +1,6 @@
+sudo service docker start|stop|pause|unpause
+	Inicia o serviço do Docker.
+
 docker ps
 	Listar containers ativos.
 	-a 
