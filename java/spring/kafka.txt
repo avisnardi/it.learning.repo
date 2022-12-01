@@ -1,0 +1,1 @@
+* Cada tópico pode ter vários consumides mas somente 1 por partição.

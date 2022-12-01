@@ -56,3 +56,8 @@ Iniciar container FMS*
 
 	docker run -ti --name fms-container.ubuntu-java8 fms-img/ubuntu-java8:1.0
 
+Iniciar Postgre
+
+	docker run -it --name ale-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=aledmin -e POSTGRES_DB=MyDatabase -p 5432:5432 -d postgres:14.5
+
+	
