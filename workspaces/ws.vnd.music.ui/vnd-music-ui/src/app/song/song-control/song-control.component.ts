@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Song } from '../song.model';
 
 @Component({
@@ -10,7 +10,8 @@ export class SongControlComponent implements OnInit {
 
   constructor() { }
 
-  private song: Song | undefined ;
+  @Input()
+  song!: Song;
 
   ngOnInit(): void {
   }
