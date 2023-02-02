@@ -1,0 +1,37 @@
+##########################################################################################
+### Configurar user name globalmente.
+
+git config --global user.name "Alexandre Visnardi"
+
+##########################################################################################
+### Configurar user mail globalmente.
+
+git config --global user.mail "avisnardi@gmail.com"
+
+##########################################################################################
+### Altetar nome da branch principal.
+
+git config --global init.defaultBranch main
+
+##########################################################################################
+### Consultar configurações.
+
+git config --list
+
+##########################################################################################
+### Criar repositorio na pasta atual.
+
+git init
+
+##########################################################################################
+### Remover arquivos do git (to unstage)
+
+git rm - cached <file>
+
+##########################################################################################
+### Comitar arquivos
+
+git commit -m "<Mensagem>."
+
+
+

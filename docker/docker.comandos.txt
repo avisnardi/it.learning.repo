@@ -58,6 +58,6 @@ Iniciar container FMS*
 
 Iniciar Postgre
 
-	docker run -it --name ale-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=aledmin -e POSTGRES_DB=MyDatabase -p 5432:5432 -d postgres:14.5
+	docker run -it --name ale-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=MyDatabase -p 5432:5432 -d postgres:14.5
 
 	
