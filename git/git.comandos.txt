@@ -14,6 +14,11 @@ git config --global user.mail "avisnardi@gmail.com"
 git config --global init.defaultBranch main
 
 ##########################################################################################
+### Altetar editor padrão de mensagens
+
+git config --global core.editor "code --wait"
+
+##########################################################################################
 ### Consultar configurações.
 
 git config --list
@@ -26,12 +31,97 @@ git init
 ##########################################################################################
 ### Remover arquivos do git (to unstage)
 
-git rm - cached <file>
+git rm --cached <file>
+
+##########################################################################################
+### Remover arquivos do git (to unstage) se já tiver algum commit.
+
+git restore --staged <file>
+
+##########################################################################################
+### Volta versão do arquivo para versão do último commit. (Perde alterações do arquivo não comitadas)
+
+git checkout <file.name>
+
 
 ##########################################################################################
 ### Comitar arquivos
 
 git commit -m "<Mensagem>."
 
+##########################################################################################
+### Alterar mensagem do commit realizados - Cuidado pq mata o commit anterior.
 
+git commit --amend -m "Nova mensagem."
+
+### Para adicionar arquivos que foram esquecidos no mesmo commit.
+git commit --amend --no-edit
+
+##########################################################################################
+### Verificar alterações de arquivos modificados e não adionados. 
+
+git diff
+
+##########################################################################################
+### Restaurar todos os arquivos não commitados
+
+git reset --hard
+
+
+
+##########################################################################################
+### Verificar alterações de arquivos modificados e adionados mas não comitados.
+
+git diff --cached
+ou
+git diff --staged
+
+
+##########################################################################################
+### Listar commits realizados
+
+git log
+
+### Listagem resumida
+git log --oneline
+
+### Quantidade de comnits
+git log -5 
+
+### Mostrar alterações
+git log -p
+ou 
+git log --patch 
+
+### Mostrar arquivos alterados
+git log -stat 
+
+### Mostrar quantidade de arquivos alterados
+git log -shortstat 
+
+
+##########################################################################################
+### Navegar para versão do commit (voltar no tempo)
+
+git checkout 3ikj3k
+
+##########################################################################################
+### Volta versão do arquivo para versão do último commit. (Perde alterações do arquivo não comitadas)
+
+git checkout <file.name>
+
+##########################################################################################
+### Remover arquivos não rastreados
+
+git clean -f
+
+##########################################################################################
+### Parar rastreamento de arquivo
+
+git update-index --skip-worktree <file.name>
+
+##########################################################################################
+### Voltar rastreamento de arquivo,
+
+git update-index --no-skip-worktree <file.name>
 
