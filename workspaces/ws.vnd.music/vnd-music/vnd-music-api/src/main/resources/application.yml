@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: vnd-music-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/MyDatabase
+    username: admin
+    password: aledmin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      format_sql: false
+      show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
