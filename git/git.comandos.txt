@@ -125,3 +125,98 @@ git update-index --skip-worktree <file.name>
 
 git update-index --no-skip-worktree <file.name>
 
+##########################################################################################
+### Consultar vinculos com repositórios remotos
+
+git remote -v
+
+##########################################################################################
+### Associar repositório local com repositorio remoto. (Origin é somente um alias)
+
+git remote add origin <url.do.repositorio.remoto>
+
+##########################################################################################
+### Alterar url para qual um alias aponta. (Origin é somente um alias)
+
+git remote set-url origin <nova.url.do.repositorio.remoto>
+
+##########################################################################################
+### Enviar artefatos comitados para repositorio remoto.
+
+git push
+
+##########################################################################################
+### Puxar artefatos comitados do repositorio remoto para repositorio local.
+
+git pull
+
+
+##########################################################################################
+### Listar branches
+
+git branch
+ou
+git branch --list
+
+##########################################################################################
+### Criar uma branch (a partir da branch atual)
+
+git branch <nome.da.branch>
+
+##########################################################################################
+### Para usar uma outra branch
+
+git checkout <nome.da.branch>
+ou
+git switch <nome.da.branch>
+
+### Volta para branch anteior.
+git switch - 
+
+##########################################################################################
+### Para criar e já usar uma branch nova  (a partir da branch atual)
+
+git checkout -b <nome.da.branch>
+ou
+git switch -c <nome.da.branch>
+ 
+##########################################################################################
+### Mudar de branch sem levar arquivos rastreados e perde os arquivos
+
+git checkout -f <nova.branch>
+
+##########################################################################################
+### Asssociar a branch local à uma branch remota
+
+git switch <branch.local> /* Migrar para a branch local desejada
+
+git push --set-upstream origin <nome.da.branch.remota>
+ou
+git push -u <nome.da.branch.remota>
+
+##########################################################################################
+### Apagar uma branch local
+
+git branch -d <nome.da.branch>
+
+
+##########################################################################################
+### Apagar uma branch remota
+
+git push --delete <nome.da.branch>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

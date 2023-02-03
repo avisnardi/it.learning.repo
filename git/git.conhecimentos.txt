@@ -1,0 +1,39 @@
+##########################################################################################
+### Github: Star, Watch e Fork
+
+Star: Favoritos
+Watch: Recebe notificações
+Fork: Copia do repositório (Cria um repositorio seu no github mas ligado com o repositorio origin (analiogo ao repositorios local/remoto só que os dois são remotos)
+
+
+##########################################################################################
+### Github: Fluxo Pull Request
+
+Fluxo de aceitação e merge de proposta de alteração do projeto.
+
+
+##########################################################################################
+### Github: Isues, Milestones e Labels
+
+Isues: Questões e erros no projeto.
+Labels: Para categorizar as Isues.
+Milestones: Quando um conjunto de Isues é tratado.
+
+
+##########################################################################################
+### Github: Arquivo README.md
+
+dillinger.io site que mostra a linguagem de marcação para o arquivo README.md
+
+##########################################################################################
+### Github: Chave SSH
+
+1. no gitbash digitar: ssh-keygen
+2. cd ~/.ssh/
+3. start .
+4. abrir o id_rsa.pub com o nomepad e copiar a chave
+5. colar a chave no Github
+6. no gitbash:
+	eval $(ssh-agent)
+	ssh-add ~/.ssh/<nome.do.arquivo.da.chave.gerada>
+	
