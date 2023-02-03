@@ -203,7 +203,63 @@ git branch -d <nome.da.branch>
 ##########################################################################################
 ### Apagar uma branch remota
 
-git push --delete <nome.da.branch>
+git push --delete origin <nome.da.branch>
+
+
+##########################################################################################
+### Alterar o nome da branch 
+
+git branch -m "<novo.nome.da.branch>" /* Altera nome da branch checada
+
+git branch -m "<nome.da.branch.a.ser.alterado>" "<novo.nome.da.branch>" /* Altera nome da branch checada
+
+##########################################################################################
+### Listar histórico de alterações de outra branch.
+
+git log <nome.da.branch> --oneline -10
+
+##########################################################################################
+### Trazer mudanças de outra branch para a branch atual
+
+git merge <nome.branch.origem>
+
+##########################################################################################
+### Listar branches mergeadas
+
+git branch --merged
+
+##########################################################################################
+### Listar branches não mergeadas
+
+git branch --no-merged
+
+##########################################################################################
+### Cancelar um merge (que deu conflito por exemplo)
+
+git merge --abort
+ou
+git reset --hard
+
+
+##########################################################################################
+### Para resolver conflito deve alterar o arquivo conflitante manualmente (ou com algum editor auxiliar VSCode é bom) e comitar
+
+<<<<<<<<< HEAD
+ALTERAÇÃO DA BRANCH DESTINO
+=========
+ALTERAÇÃO DA BRANCH ORIGGEM
+>>>>>>>>> <BRANCH.ORIGEM>
+
+##########################################################################################
+
+
+
+
+
+
+
+
+
 
 
 
