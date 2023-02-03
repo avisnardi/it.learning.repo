@@ -250,29 +250,155 @@ ALTERAÇÃO DA BRANCH DESTINO
 ALTERAÇÃO DA BRANCH ORIGGEM
 >>>>>>>>> <BRANCH.ORIGEM>
 
+
 ##########################################################################################
+### Listar tags
+
+git tag
+
+git tag -l
+
+git tag --list
+
+git tag -n /* Lista mensagens das tags.
 
 
+##########################################################################################
+### Criar tag
+
+git tag <nome.da.tag>
+
+##########################################################################################
+### Criar tag anotada
+
+git tag -a -m "<mensagem.da.tag>" <nome.da.tag>
+
+##########################################################################################
+### Criar tag em commit antigo
+
+git tag <nome.da.tag> <código.do.commit>
+ou 
+git tag -a -m "<mensagem.da.tag>" <nome.da.tag> <nome.do.commit>
+
+##########################################################################################
+### Enviar tag para repositorio remoto
+
+git push origin <nome.da.tag>
+
+git push origin --tags /* Envia todas as tags.
+
+##########################################################################################
+### Ir para situação da tag
+
+git checkout <nome.da.tag>
+
+##########################################################################################
+### Comparar tags ou commits
+
+git diff <nome.da.tag.01> <nome.da.tag.02>
+
+##########################################################################################
+### Remover tag local
+
+git tag -d <nome.da.tag>
+
+##########################################################################################
+### Remover tag remota 
+
+git push --delete origin <nome.da.tag>
+
+##########################################################################################
+### Guardar mudanças não comitadas para navergar entre branches e commitar depois
+
+git stash
+
+##########################################################################################
+### Listar mudanças guardadas no stash
+
+git stash list
+ 
+##########################################################################################
+### Voltar as mudanças guardadas no stash
+
+git stash apply
+
+git stash apply stash@{1} /* Volta situação de um stash especifico.
+
+##########################################################################################
+### Apagar stash e apagá-lo
+
+git drop /* Apaga o primeiro.
+
+git drop stash@{1}
+
+##########################################################################################
+### Criar branch a partir de um stash
+
+git stash branch <nome.da.branch>
+
+##########################################################################################
+### Reverter alterações de um commit (mas mantem histórico)
+
+git revert <hash.do.commit>
+
+git revert HEAD
+
+##########################################################################################
+### Reverter a reversão das alterações de um commit
+
+git revert <hash.do.commit> --no-edit
+
+git revert HEAD --no-edit
 
 
+##########################################################################################
+### Apagar commit de vez
 
+git reset --hard HEAD~<numero.de.commits.a.serem.apagados>
 
+git reset --hard HEAD~5 /* Apaga os 5 últimos comits.
 
+##########################################################################################
+### Apagar commit mas manter alterações rastreadas
 
+git reset --mixed HEAD~<numero.de.commits.a.serem.apagados>
 
+##########################################################################################
+### Apagar commit mas manter alterações como added
 
+git reset --soft HEAD~<numero.de.commits.a.serem.apagados>
 
+##########################################################################################
+### Adicionar e commitar alterações em um mesmo comando.
 
+git commit -a -m "<mensagem.do.commit>"
 
+##########################################################################################
+### Forçar subida de alterações para o repositorio remoto (mesmo apagando commits existente)
 
+git push --force
 
+git push --force-with-lease /* Sobe alterações somente se mudanças não forem perdidas.
 
+##########################################################################################
+### Trazer commits posteriores à criação da branch para a branch
 
+git rebase main /* Estando na branch puxa alteações da branch main
 
+##########################################################################################
+### Abortar rebase com conflito
 
+git rebase --abort
 
+##########################################################################################
+### Executar rebase após resolução do conflito
 
+git rebase --continue
 
+##########################################################################################
+### Buscar mudanças no servidor fazendo um rebasa (sem commit de merge)
+
+git pull --rebase
 
 
 
