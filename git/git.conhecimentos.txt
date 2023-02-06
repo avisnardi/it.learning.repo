@@ -37,12 +37,9 @@ dillinger.io site que mostra a linguagem de marcação para o arquivo README.md
 	eval $(ssh-agent)
 	ssh-add ~/.ssh/<nome.do.arquivo.da.chave.gerada>
 	
-teste tag.02	
 ##########################################################################################
 ### Github: Network Visualização do gráfico das branches.
 
 Pagina do Github para visualizar branches.
 
 
-##########################################################################################
-### Testtando tag em branches tag 003
